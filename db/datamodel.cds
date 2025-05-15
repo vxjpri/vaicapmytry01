@@ -17,5 +17,15 @@ context master {
         country         :   String(40);
         building        :   String(105);
         address_type    :   String(40);
+        bp              :   Association to one BusinessPartners on 
+                            bp.address_guid = $self
+    }
+
+    entity Products  {
+        key node_key    :   String(32);
+        product_id      :   String(28);
+        category        :   String(2);
+        prod_desc       :   String(200);
+        prod_name       :   localized String(200);
     }
 }
